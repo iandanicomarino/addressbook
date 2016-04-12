@@ -70,32 +70,4 @@ router.post('/findAddress/:id', function(req,res){
         res.json(docs);
     });
 });
-
-// router.post('/update/:id',function(req,res){
-//   var id=req.params.id;
-//   delete req.body._id;
-//   delete req.body.__v;
-//   console.log(id);
-//   console.log(req.body);
-//   List.update({_id:id},req.body,{upsert:false},function(err, docs){
-//     console.log(req.body+"inserted");
-//   });
-//   List.find(function (err,docs) {
-//     res.json(docs);
-//   });
-// });
-//
-// router.post('/edit/:id',function(req,res){
-//   console.log(req.params.id);
-//   List.findOne({_id:req.params.id},function (err,docs) {
-//     res.json(docs);
-//   });
-// });
-//
-// router.post('/toggle/:id',function(req,res){
-//   console.log(req.body.done);
-//   delete req.body._id;
-//   List.update({_id:req.params.id},req.body,{upsert:true},function(err, docs){
-//     console.log(docs+"inserted");
-//   });
 module.exports=router;
