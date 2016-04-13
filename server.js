@@ -3,9 +3,9 @@ var express= require ('express');
 var bodyparser= require ('body-parser');
 var mongoose = require ('mongoose');
 var settings =require ('./config/settings.js');
-var router = require('./api/routers/router');
+//var router = require('./api/routers/router');
 var app=express();
-
+var router = express.Router();
 var params=
 {
     express     :express,
@@ -18,7 +18,8 @@ var params=
 }
 app.use(express.static(__dirname+"/public"));
 app.use(bodyparser.json());
-app.use('/',router);
+app.use('/',require('./api/routers/contact-router.js')(params));
+app.use('/',require('./api/routers/address-router.js')(params));
 //server actions
 
 
